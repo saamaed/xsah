@@ -1,15 +1,15 @@
 locale = "en"
 label = "English"
 weight = 1
-title = "Blowfish"
+title = "XSAH"
 
 [params]
   displayName = "English"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  logo = "img/blowfish_logo_transparent.png"
-  description = "A powerful, lightweight theme for Hugo."
+  logo = "img/xsah-logott.png"
+  description = "A journey from zero to DevOps engineering"
 
 
 [params.author]
@@ -17,9 +17,9 @@ title = "Blowfish"
   image = "img/blowfish_logo.png"
   headline = "Learn. Build. Repeat."
   bio = "A journey from zero to DevOps engineering, driven by hands-on practice, real-world infrastructure, and continuous learning."
-  email = "sayyidamirhosseini@gmail.com"
   links = [
-    { x-twitter = "https://twitter.com/burufugu" },
-    { github = "https://github.com/nunocoracao/blowfish" },
-    { bluesky = "https://bsky.app/profile/burufugu.bsky.social" },
+    { email = "mailto:sayyidamirhosseini@gmail.com"},
+    { x-twitter = "https://twitter.com/saamaed" },
+    { github = "https://github.com/saamaed" },
+    { linkedin = "https://www.linkedin.com/in/saamaed" },
   ]
