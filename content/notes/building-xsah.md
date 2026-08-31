@@ -14,15 +14,15 @@ categories:
 
 ---
 
-# Building XSAH with Hugo SSG and Blowfish Template
+## Overview
 
 XSAH is my personal website for documenting my technical journey, projects, experiments, and notes.
 
-The site is built with **Hugo** and the **Blowfish** theme, with **Git** used for version control and **GitHub** used for repository hosting. Deployment is handled through **GitHub Actions** and **GitHub Pages**.
+The site is built with **Hugo SSG** and the **Blowfish** theme, with **Git** used for version control and **GitHub** used for repository hosting. Deployment is handled through **GitHub Actions** and **GitHub Pages**.
 
 This note documents the initial setup, customization, and deployment of the website.
 
-## 1. Installing Hugo
+## Installing Hugo
 
 The first step was installing the **[Extended version of Hugo](https://gohugo.io/installation/)** was chosen because it provides more features and capabilities than the standard version, including additional asset processing features required by themes such as Blowfish.
 
@@ -45,7 +45,7 @@ $ hugo new site xsah
 $ cd xsah
 ```
 
-## 2. Initializing Git
+## Initializing Git
 
 [Git](https://git-scm.com/) was used for version control, making it possible to track changes to the website, maintain its history, and safely manage updates over time.
 
@@ -62,7 +62,7 @@ The GitHub repository was added as the remote:
 $ git remote add origin git@github.com:<username>/<repository>.git
 ```
 
-## 3. Adding the Blowfish Theme
+## Adding the Blowfish Theme
 
 [Blowfish](https://blowfish.page/docs) was added to the project as a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Hugo also provides its own [module system](https://gohugo.io/hugo-modules/), which can be used to manage themes and other dependencies.
 
@@ -81,7 +81,7 @@ $ git submodule update --remote --merge
 ```
 
 
-## 4. Shallow Clone of the Blowfish Repository
+## Shallow Clone of the Blowfish Repository
 
 For obtaining the theme source without downloading its complete Git history, a shallow clone can be used:
 
@@ -93,7 +93,7 @@ This retrieves the current theme with only the latest revision, reducing unneces
 
 The required example configuration and content were then used as the starting point for the XSAH website.
 
-## 5. Cleaning the Default Configuration
+## Cleaning the Default Configuration
 
 The [Blowfish example](https://blowfish.page/examples/) site contains a large amount of demonstration content and configuration intended to showcase the theme's features.
 
@@ -181,7 +181,7 @@ The project was then reduced to a simpler structure focused on the actual websit
 
 The purpose was to remove the unnecessary parts of the Blowfish demo while keeping the core structure required by the XSAH website.
 
-## 6. Adding the XSAH Branding
+## Adding the XSAH Branding
 
 After cleaning the demo content, the remaining Blowfish configuration was adapted to the XSAH project.
 
@@ -208,7 +208,7 @@ $ config/_default/params.toml
 
 This keeps the customisation separate from the Blowfish theme itself.
 
-## 7. Customizing the Homepage
+## Customizing the Homepage
 
 The homepage was configured to use Blowfish's `profile` layout:
 
@@ -240,7 +240,7 @@ Recent articles were enabled through Blowfish's built-in [Homepage Layout](https
 The existing Blowfish layout and shortcode mechanisms were reused instead of modifying the theme's core templates.
 
 
-## 8. Creating the First Post
+## Creating the First Post
 
 A first Markdown post was created to document the website setup:
 
@@ -280,7 +280,7 @@ The local development server is then available at browser:
 http://localhost:1313/
 ```
 
-## 9. GitHub Actions Deployment
+## GitHub Actions Deployment
 
 Deployment was automated using [GitHub Actions](https://github.com/features/actions) and [GitHub Pages](https://pages.github.com/).
 
@@ -316,7 +316,7 @@ XSAH website
 After committing and pushing the workflow, GitHub automatically builds and deploys the site to GitHub Pages whenever changes are pushed to the main branch.
 
 
-## 10. Committing and Pushing the Changes
+## Committing and Pushing the Changes
 
 The repository was connected to [GitHub using SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh), allowing changes to be pushed without entering GitHub credentials for every operation.
 

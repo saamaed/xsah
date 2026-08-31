@@ -1,7 +1,7 @@
 locale = "en"
 label = "English"
 weight = 1
-title = "XSAH"
+title = "XSAH | Practical Journey to DevOps"
 
 [params]
   displayName = "English"
@@ -14,9 +14,9 @@ title = "XSAH"
 
 [params.author]
   name = "Sayid Amir Hosseini"
-  image = "img/blowfish_logo.png"
-  headline = "Learn. Build. Repeat."
-  bio = "A journey from zero to DevOps engineering, driven by hands-on practice, real-world infrastructure, and continuous learning."
+  image = "img/author-ppic.jpg"
+  headline = "IT Professional | Linux & DevOps"
+  bio = "IT professional focused on Linux, infrastructure, and DevOps"
   links = [
     { email = "mailto:sayyidamirhosseini@gmail.com"},
     { x-twitter = "https://twitter.com/saamaed" },
