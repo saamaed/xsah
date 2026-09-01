@@ -7,30 +7,13 @@
   weight = 10
 
 [[main]]
-  name = "Notes"
-  pageRef = "notes"
+  name = "Posts"
+  pageRef = "posts"
   weight = 20
 
 [[main]]
-  name = "Topics"
-  weight = 30
-
-[[main]]
-  name = "Linux"
-  parent = "Topics"
-  pageRef = "topics/linux"
-  weight = 10
-
-[[main]]
-  name = "DevOps"
-  parent = "Topics"
-  pageRef = "topics/devops"
-  weight = 20
-
-[[main]]
-  name = "Cloud"
-  parent = "Topics"
-  pageRef = "topics/cloud"
+  name = "Projects"
+  pageRef= "projects"
   weight = 30
 
 [[main]]
@@ -69,6 +52,6 @@
    weight = 10
 
  [[footer]]
-   name = "Topics"
-   pageRef = "topics"
+   name = "Categories"
+   pageRef = "categories"
    weight = 20

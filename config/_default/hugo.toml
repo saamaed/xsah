@@ -29,8 +29,8 @@ googleAnalytics = "G-PEDMYR1V0K"
 [taxonomies]
   tag = "tags"
   category = "categories"
-  author = "authors"
-  series = "series"
+ # author = "authors"
+ # series = "series"
 
 [sitemap]
   changefreq = 'always'
@@ -78,7 +78,8 @@ googleAnalytics = "G-PEDMYR1V0K"
   [segments.core]
     [[segments.core.includes]]
       # Debug core pages
-      path = '{/,/notes,/notes/**,/samples,/samples/**}'
+      # path = '{/,/notes,/notes/**,/samples,/samples/**}'
+	path = '{/,/notes,/notes/**}'
   [segments.en_only]
     [[segments.en_only.includes]]
       # Alternatively, you can use environment variable

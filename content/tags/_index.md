@@ -1,6 +1,6 @@
 ---
 title: Tags
+description: "Browse posts by topic"
 ---
 
-Browse notes by topic and discover related subjects through tags.
-
+Browse posts by topic and discover related subjects through tags.

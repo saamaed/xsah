@@ -16,14 +16,14 @@ enableStructuredBreadcrumbs = true
 
 replyByEmail = false
 
-mainSections = ["notes","topics"]
+mainSections = ["posts"]
 # robots = ""
 
 disableImageOptimization = false
 disableImageOptimizationMD = false
 disableTextInHeader = false
 # backgroundImageWidth = 1200
-copyright = "© { year } XSAH. All rights reserved."
+copyright = "© 2026 All rights reserved."
 
 defaultBackgroundImage = "images/v3/site-background.svg"
 backgroundCanvas = true # render defaultBackgroundImage as a fixed backdrop on every page
@@ -58,8 +58,8 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
   # homepageImage = "/img/iceland.jpg" # used in: hero, and card
   showRecent = true
   showRecentItems = 6
-  showMoreLink = false
-  showMoreLinkDest = "notes"
+  showMoreLink = true
+  showMoreLinkDest = "posts"
   cardView = true
   cardViewScreenWidth = false
   layoutBackgroundBlur = true # only used when layout equals background
@@ -90,7 +90,7 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
   showReadingProgress = true
   showTableOfContents = true
   showRelatedContent = true
-  relatedContentLimit = 9
+  relatedContentLimit = 6
   showTaxonomies = true
   showAuthorsBadges = false
   showWordCount = true

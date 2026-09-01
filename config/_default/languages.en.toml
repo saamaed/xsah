@@ -10,7 +10,7 @@ title = "XSAH | Practical Journey to DevOps"
   dateFormat = "2 January 2006"
   logo = "img/xsah-logott.png"
   description = "A journey from zero to DevOps engineering"
-
+  shortTitle = "XSAH"
 
 [params.author]
   name = "Sayid Amir Hosseini"

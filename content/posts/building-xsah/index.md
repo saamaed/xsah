@@ -3,14 +3,14 @@
 title: "Building XSAH with Hugo and Blowfish"
 date: 2026-08-30
 description: "Setting up, customizing and deploying the XSAH website with Hugo, Blowfish and GitHub Pages."
+categories:
+  - devops
 tags:
   - hugo
   - blowfish
   - git
   - github
   - github-pages
-categories:
-  - notes
 
 ---
 
