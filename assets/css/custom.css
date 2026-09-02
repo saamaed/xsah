@@ -1,0 +1,27 @@
+@media (width < 853px) {
+  nav[aria-label="Mobile menu"] {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+    column-gap: 1rem;
+    row-gap: 0.75rem;
+  }
+
+  /* Keep regular menu items on their own full-width row */
+  nav[aria-label="Mobile menu"] > div:not(:has(a[aria-label="linkedin"])):not(:has(a[aria-label="x-twitter"])):not(:has(a[aria-label="github"])) {
+    grid-column: 1 / -1;
+  }
+
+  /* Social links */
+  nav[aria-label="Mobile menu"] > div:has(a[aria-label="linkedin"]),
+  nav[aria-label="Mobile menu"] > div:has(a[aria-label="x-twitter"]),
+  nav[aria-label="Mobile menu"] > div:has(a[aria-label="github"]) {
+    width: auto;
+  }
+
+  /* Remove vertical spacing from the original menu layout */
+  nav[aria-label="Mobile menu"] > div {
+    margin-top: 0;
+  }
+}
+
