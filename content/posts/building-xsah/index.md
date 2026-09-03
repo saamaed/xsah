@@ -29,7 +29,7 @@ The first step was installing the **[Extended version of Hugo](https://gohugo.io
 **Hugo Extended** was installed and verified with:
 
 ```console
-$ hugo version
+hugo version
 ```
 
 The installed version was:
@@ -41,8 +41,8 @@ hugo v0.165.0 ... extended linux/amd64
 A new Hugo site was initialized, followed by moving into its directory:
 
 ```console
-$ hugo new site xsah
-$ cd xsah
+hugo new site xsah
+cd xsah
 ```
 
 ## Initializing Git
@@ -52,14 +52,14 @@ $ cd xsah
 Git was initialized locally, and the default branch was renamed to **main**:
 
 ```console
-$ git init
-$ git branch -M main
+git init
+git branch -M main
 ```
 
 The GitHub repository was added as the remote:
 
 ```console
-$ git remote add origin git@github.com:<username>/<repository>.git
+git remote add origin git@github.com:<username>/<repository>.git
 ```
 
 ## Adding the Blowfish Theme
@@ -69,7 +69,7 @@ $ git remote add origin git@github.com:<username>/<repository>.git
 For this project, however, Git submodules were preferred to keep the theme as a separate Git-managed dependency:
 
 ```console
-$ git submodule add https://github.com/nunocoracao/blowfish.git themes/blowfish
+git submodule add https://github.com/nunocoracao/blowfish.git themes/blowfish
 ```
 
 Using a submodule keeps the theme repository separate from the website repository while allowing the project to track a specific theme version.
@@ -77,7 +77,7 @@ Using a submodule keeps the theme repository separate from the website repositor
 The theme can be updated when needed with:
 
 ```console
-$ git submodule update --remote --merge
+git submodule update --remote --merge
 ```
 
 
@@ -86,7 +86,7 @@ $ git submodule update --remote --merge
 For obtaining the theme source without downloading its complete Git history, a shallow clone can be used:
 
 ```console
-$ git clone --depth 1 https://github.com/nunocoracao/blowfish.git
+git clone --depth 1 https://github.com/nunocoracao/blowfish.git
 ```
 
 This retrieves the current theme with only the latest revision, reducing unnecessary repository history.
@@ -102,68 +102,68 @@ For XSAH, unnecessary example content and multilingual configuration were remove
 The demo content under `content/` was removed while preserving the main `_index.md` file:
 
 ```console
-$ find content -mindepth 1 -type f ! -name "_index.md" -delete
+find content -mindepth 1 -type f ! -name "_index.md" -delete
 ```
 
 The example site's content and static files were removed:
 
 ```console
-$ rm -rf themes/blowfish/exampleSite/content
-$ rm -rf themes/blowfish/exampleSite/static
+rm -rf themes/blowfish/exampleSite/content
+rm -rf themes/blowfish/exampleSite/static
 ```
 
 Only English is currently used, so the additional language configuration files were removed:
 
 ```console
-$ rm config/_default/languages.de.toml
-$ rm config/_default/languages.es.toml
-$ rm config/_default/languages.fr.toml
-$ rm config/_default/languages.it.toml
-$ rm config/_default/languages.ja.toml
-$ rm config/_default/languages.pt-br.toml
-$ rm config/_default/languages.pt-pt.toml
-$ rm config/_default/languages.zh-cn.toml
+rm config/_default/languages.de.toml
+rm config/_default/languages.es.toml
+rm config/_default/languages.fr.toml
+rm config/_default/languages.it.toml
+rm config/_default/languages.ja.toml
+rm config/_default/languages.pt-br.toml
+rm config/_default/languages.pt-pt.toml
+rm config/_default/languages.zh-cn.toml
 ```
 
 The corresponding unused menu configurations were removed as well:
 
 ```console
-$ rm config/_default/menus.de.toml
-$ rm config/_default/menus.es.toml
-$ rm config/_default/menus.fr.toml
-$ rm config/_default/menus.it.toml
-$ rm config/_default/menus.ja.toml
-$ rm config/_default/menus.pt-br.toml
-$ rm config/_default/menus.pt-pt.toml
-$ rm config/_default/menus.zh-cn.toml
+rm config/_default/menus.de.toml
+rm config/_default/menus.es.toml
+rm config/_default/menus.fr.toml
+rm config/_default/menus.it.toml
+rm config/_default/menus.ja.toml
+rm config/_default/menus.pt-br.toml
+rm config/_default/menus.pt-pt.toml
+rm config/_default/menus.zh-cn.toml
 ```
 
 The example site's authors, examples, users, and demo tag content were no longer required:
 
 ```console
-$ rm -rf content/authors
-$ rm -rf content/examples
-$ rm -rf content/users
-$ rm -rf content/tags/advanced
+rm -rf content/authors
+rm -rf content/examples
+rm -rf content/users
+rm -rf content/tags/advanced
 ```
 
 Unused multilingual taxonomy files were also removed:
 
 ```console
-$ rm content/tags/_index.de.md
-$ rm content/tags/_index.es.md
-$ rm content/tags/_index.fr.md
-$ rm content/tags/_index.it.md
-$ rm content/tags/_index.ja.md
-$ rm content/tags/_index.pt-br.md
-$ rm content/tags/_index.pt-pt.md
-$ rm content/tags/_index.zh-cn.md
+rm content/tags/_index.de.md
+rm content/tags/_index.es.md
+rm content/tags/_index.fr.md
+rm content/tags/_index.it.md
+rm content/tags/_index.ja.md
+rm content/tags/_index.pt-br.md
+rm content/tags/_index.pt-pt.md
+rm content/tags/_index.zh-cn.md
 ```
 
 After each cleanup stage, the site was rebuilt with Hugo to verify that the remaining configuration and content were still valid:
 
 ```console
-$ hugo
+hugo
 ```
 
 The project was then reduced to a simpler structure focused on the actual website:
@@ -188,7 +188,7 @@ After cleaning the demo content, the remaining Blowfish configuration was adapte
 The site identity is defined in:
 
 ```console
-$ nano config/_default/languages.en.toml
+nano config/_default/languages.en.toml
 ```
 
 The original Blowfish title and description were replaced with the XSAH branding:
@@ -203,7 +203,7 @@ The theme's logo and author information were also adapted to the XSAH identity.
 Project-specific theme settings remain in:
 
 ```console
-$ config/_default/params.toml
+config/_default/params.toml
 ```
 
 This keeps the customisation separate from the Blowfish theme itself.
@@ -223,7 +223,7 @@ The homepage was configured to use Blowfish's `profile` layout:
 The homepage content and introduction were then defined in:
 
 ```console
-$ nano content/_index.md
+nano content/_index.md
 ```
 
 The page title and description were set to reflect the purpose of XSAH:
@@ -245,7 +245,7 @@ The existing Blowfish layout and shortcode mechanisms were reused instead of mod
 A first Markdown post was created to document the website setup:
 
 ```console
-$ hugo new notes/building-xsah.md
+hugo new notes/building-xsah.md
 ```
 
 Hugo uses front matter at the beginning of the Markdown file to define metadata such as the title, date, description, tags, and category.
@@ -271,7 +271,7 @@ categories:
 The website can be previewed locally with:
 
 ```console
-$ hugo server
+hugo server
 ```
 
 The local development server is then available at browser:
@@ -323,15 +323,15 @@ The repository was connected to [GitHub using SSH](https://docs.github.com/en/au
 After completing the configuration, customization, branding, and initial content, the changes were committed and pushed to the `main` branch:
 
 ```console
-$ git status
-$ git add .
-$ git commit -m "Set up and customize XSAH website"
+git status
+git add .
+git commit -m "Set up and customize XSAH website"
 ```
 
 The changes were then pushed to GitHub:
 
 ```console
-$ git push
+git push
 ```
 
 GitHub Actions automatically handled the build and deployment process.
