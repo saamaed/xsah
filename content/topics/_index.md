@@ -1,5 +1,5 @@
 ---
-title: Categories
+title: Topics
 description: "Browse posts by category"
 ---
 

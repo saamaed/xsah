@@ -10,7 +10,7 @@ A journey from zero to DevOps engineering, driven by hands-on practice, real-wor
 {{< feature
     icon="code"
     title="Linux"
-    url="/categroies/linux/"
+    url="/topics/linux/"
     label="Explore Linux"
 >}}
 Systems, administration, networking, and the foundations beneath
@@ -19,7 +19,7 @@ Systems, administration, networking, and the foundations beneath
 {{< feature
     icon="docker"
     title="DevOps"
-    url="/categories/devops/"
+    url="/topics/devops/"
     label="Explore DevOps"
 >}}
 Automation, containers, CI/CD, infrastructure, and continuous delivery
@@ -28,7 +28,7 @@ Automation, containers, CI/CD, infrastructure, and continuous delivery
 {{< feature
     icon="cloud"
     title="Cloud"
-    url="/categories/cloud/"
+    url="/topics/cloud/"
     label="Explore Cloud"
 >}}
 Cloud infrastructure, platforms, services, and scalable systems

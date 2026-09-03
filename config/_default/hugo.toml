@@ -28,7 +28,7 @@ googleAnalytics = "G-PEDMYR1V0K"
 
 [taxonomies]
   tag = "tags"
-  category = "categories"
+  category = "topics"
  # author = "authors"
  # series = "series"
 
@@ -49,7 +49,8 @@ googleAnalytics = "G-PEDMYR1V0K"
         weight = 100
 
     [[related.indices]]
-        name = "categories"
+        # name = "categories"
+        name = "topics"
         weight = 100
 
     [[related.indices]]
@@ -79,7 +80,7 @@ googleAnalytics = "G-PEDMYR1V0K"
     [[segments.core.includes]]
       # Debug core pages
       # path = '{/,/notes,/notes/**,/samples,/samples/**}'
-	path = '{/,/notes,/notes/**}'
+	path = '{/,/posts,/posts/**}'
   [segments.en_only]
     [[segments.en_only.includes]]
       # Alternatively, you can use environment variable

@@ -24,7 +24,7 @@ sharingLinks: false
   </div>
 </div>
 
-
+---
 {{< lead >}}
 **XSAH** is my personal technical knowledge base — a place to learn, build, document, and improve.
 {{< /lead >}}
@@ -137,5 +137,5 @@ This is the loop behind XSAH:
 
 ---
 
-{{< cta url="/posts/" label="Explore Notes" >}}
-{{< cta url="/categories/" label="Explore Topics" style="outline" >}}
+{{< cta url="/posts/" label="Explore All Notes" >}}
+{{< cta url="/topics/" label="Explore Topics" style="outline" >}}
