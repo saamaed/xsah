@@ -1,6 +1,6 @@
 ---
 title: "Linux Permissions, Ownership and umask"
-date: 2026-09-03T19:47:28+03:30
+date: 2026-09-04T19:47:28+03:30
 description: "A practical guide to Linux permissions, ownership, chmod, chown, and umask."
 topics:
   - Linux
@@ -553,7 +553,7 @@ Permissions
 Access to Files and Directories
 ```
 
-The previous posts introduced the filesystem, mounting, inodes, and links. Permissions add another layer to that picture.
+The [**previous posts**](/tags/filesystem/) introduced the filesystem, mounting, inodes, and links. Permissions add another layer to that picture.
 
 A filename identifies an object through the filesystem and inode structures discussed earlier, while ownership and permission bits determine which users are allowed to interact with it.
 

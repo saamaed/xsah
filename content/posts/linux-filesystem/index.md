@@ -1,6 +1,6 @@
 ---
 title: "Understanding the Linux Filesystem"
-date: 2026-09-03T11:56:13+03:30
+date: 2026-09-01T11:56:13+03:30
 description: "A practical introduction to the Linux filesystem, covering the purpose of essential directories and how they fit together."
 topics:
   - Linux

@@ -1,6 +1,6 @@
 ---
 title: "Mounting Filesystems and /etc/fstab"
-date: 2026-09-03T15:17:24+03:30
+date: 2026-09-02T15:17:24+03:30
 description: "A practical guide to mounting filesystems in Linux, understanding mount points, and configuring persistent mounts with /etc/fstab."
 topics:
   - Linux
