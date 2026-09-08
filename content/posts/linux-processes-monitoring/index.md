@@ -192,9 +192,7 @@ These tools show which processes are currently consuming CPU resources and help 
 
 ## Memory and Processes
 
-Processes also require memory.
-
-A process has its own virtual address space, which allows it to work with memory without directly manipulating the physical memory of other processes.
+Processes also require memory. A process has its own virtual address space, which allows it to work with memory without directly manipulating the physical memory of other processes.
 
 Linux manages this virtual memory and maps it onto physical memory and, when necessary, other storage mechanisms such as swap.
 
@@ -301,9 +299,9 @@ This makes `top` one of the most useful first-response tools when investigating 
 
 ---
 
-## `htop`: An Interactive Alternative
+### An Interactive Alternative `htop`
 
-`htop` provides a more interactive interface for process monitoring.
+The `htop` provides a more interactive interface for process monitoring.
 
 ```bash
 htop
@@ -349,13 +347,7 @@ You will find many numbered directories:
 
 These numbers correspond to process IDs.
 
-Therefore:
-
-```text
-/proc/<PID>
-```
-
-contains information associated with a particular process.
+Therefore `/proc/<PID>` contains information associated with a particular process.
 
 For example:
 
@@ -473,7 +465,7 @@ The number must therefore be interpreted in relation to the number of available 
 
 ---
 
-## Monitoring Is More Than CPU Usage
+## Monitoring is More Than CPU Usage
 
 One of the most important lessons in system monitoring is that CPU usage alone does not tell the whole story.
 
@@ -519,9 +511,7 @@ iftop
 
 can help identify active connections and network usage.
 
-The goal is not to memorize every monitoring command.
-
-The goal is to develop a systematic approach to answering:
+The goal is not to memorize every monitoring command, rather it is to develop a systematic approach to answering:
 
 > What is the system doing right now, and which resource is limiting it?
 
@@ -529,9 +519,7 @@ The goal is to develop a systematic approach to answering:
 
 ## A Practical Troubleshooting Workflow
 
-Suppose a server suddenly becomes slow.
-
-Instead of immediately restarting services, start by observing the system.
+Suppose a server suddenly becomes slow. Instead of immediately restarting services, start by observing the system.
 
 ### 1. Check the overall system state
 
@@ -653,7 +641,7 @@ Understanding Linux processes therefore provides a foundation for understanding 
 
 ---
 
-## The Bigger Picture
+## Summary
 
 At this point, several concepts we have covered begin to connect:
 
@@ -685,9 +673,7 @@ The kernel initializes the system, PID 1 establishes the user-space environment,
 
 System monitoring gives us the tools to observe what happens after the system is up and running.
 
----
-
-## Key Takeaways
+**Key Takeaways**:
 
 * A **process** is a running instance of a program.
 * Every process has a unique **PID**.
@@ -703,12 +689,6 @@ System monitoring gives us the tools to observe what happens after the system is
 * Effective troubleshooting requires looking at CPU, memory, I/O, and network—not just one metric.
 * Understanding processes provides an important foundation for containers and broader DevOps concepts.
 
----
+> Processes explain **what is running** on a Linux system. Another important aspect is understanding **who can do what**.
 
-## What's Next?
-
-Processes explain **what is running** on a Linux system.
-
-The next step is to understand **who is allowed to do what**.
-
-## That brings us to Linux permissions, ownership, and `umask`—the mechanisms that control access to files and other system resources.
+That brings us to [**Linux permissions, ownership, and umask**](/posts/linux-permissions/)—the mechanisms that control access to files and other system resources.
