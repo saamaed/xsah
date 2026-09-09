@@ -5,6 +5,7 @@ description: "A practical introduction to the Linux boot process, from firmware 
 topics:
  - Linux
 tags:
+ - linux-fundamentals
  - boot-process
  - uefi
  - bios

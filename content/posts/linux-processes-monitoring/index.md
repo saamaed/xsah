@@ -5,6 +5,7 @@ description: "Learn how Linux manages processes, process IDs, process states, sy
 topics:
   - Linux
 tags:
+  - linux-fundamentals
   - processes
   - system-monitoring
   - proc

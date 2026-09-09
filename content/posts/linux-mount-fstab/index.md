@@ -5,6 +5,7 @@ description: "A practical guide to mounting filesystems in Linux, understanding 
 topics:
   - Linux
 tags:
+  - linux-fundamentals
   - mount
   - fstab
   - filesystem

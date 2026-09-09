@@ -5,6 +5,7 @@ description: "A practical guide to Linux permissions, ownership, chmod, chown, a
 topics:
   - Linux
 tags:
+  - linux-fundamentals
   - permissions
   - ownership
   - chmod

@@ -3,12 +3,13 @@ title: "Inodes, Hard Links and Symbolic Links"
 date: 2026-09-03T17:59:30+03:30
 description: "A practical introduction to inodes, hard links, and symbolic links, and how Linux uses them to organize and reference files."
 topics:
- - Linux
+  - Linux
 tags:
- - inodes
- - hard-links
- - symbolic-links
- - filesystem
+  - linux-fundamentals
+  - inodes
+  - hard-links
+  - symbolic-links
+  - filesystem
 ---
 
 ## Introduction

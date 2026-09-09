@@ -5,6 +5,7 @@ description: "A practical introduction to the Linux filesystem, covering the pur
 topics:
   - Linux
 tags:
+  - linux-fundamentals
   - filesystem
   - linux-directory-structure
 ---

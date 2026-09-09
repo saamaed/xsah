@@ -15,11 +15,9 @@ tags:
 
 ## Introduction
 
-Learning Linux is not just about learning commands.
+Learning Linux is not just about learning commands. It is easy to learn how to run `ls`, `mount`, `chmod`, `ps`, or `systemctl` individually. The more important step is understanding how these commands relate to the system underneath them.
 
-It is easy to learn how to run `ls`, `mount`, `chmod`, `ps`, or `systemctl` individually. The more important step is understanding how these commands relate to the system underneath them.
-
-During the previous posts in this series, we looked at different parts of Linux:
+During the previous posts in [**this series**](/tags/linux-fundamentals/), we looked at different parts of Linux:
 
 * How the Linux filesystem is organised
 * How filesystems are mounted
@@ -29,11 +27,7 @@ During the previous posts in this series, we looked at different parts of Linux:
 * How a Linux system boots from firmware to the kernel and `systemd`
 * How processes run and consume system resources
 
-At first, these topics may appear independent.
-
-They are not.
-
-They are different views of the same operating system.
+At first, these topics may appear independent. But they are not, They are different views of the same operating system.
 
 This post brings those concepts together into a single mental model.
 
@@ -177,7 +171,7 @@ This is one of the reasons Linux can work with many different storage technologi
 
 ---
 
-## `/etc/fstab` Makes Mounting Persistent
+## Makes Mounting Persistent `/etc/fstab`
 
 A manual mount normally disappears after reboot.
 
@@ -187,9 +181,7 @@ To make a filesystem mount automatically, Linux systems commonly use:
 /etc/fstab
 ```
 
-This file describes filesystems that should be mounted and how they should be mounted.
-
-A simplified entry might look like:
+This file describes filesystems that should be mounted and how they should be mounted. A simplified entry might look like:
 
 ```text
 UUID=xxxx-xxxx  /data  ext4  defaults  0  2
@@ -217,17 +209,15 @@ It is part of the process that establishes the filesystem environment during sys
 
 ---
 
-## Files Are More Than Names
+## Files are More Than Names
+
+We tend to think of the path as representing the file itself. But linux separates several concepts here.
 
 When we see:
 
 ```text
 /home/user/report.txt
 ```
-
-we tend to think of the path as representing the file itself.
-
-Linux separates several concepts here.
 
 A directory entry associates a filename with an inode.
 
@@ -262,9 +252,7 @@ backup.txt ───┘
 
 The filenames are different, but they refer to the same underlying file object.
 
----
-
-## Symbolic Links Are Different
+> **Symbolic Links are Different**
 
 A symbolic link does not point directly to the same inode.
 
@@ -284,6 +272,7 @@ This distinction becomes important when troubleshooting broken links, moving fil
 
 It also demonstrates an important Linux principle:
 
+>[!NOTES]
 > What users see as a filename or path is not necessarily the same thing as the underlying filesystem object.
 
 ---
@@ -292,7 +281,7 @@ It also demonstrates an important Linux principle:
 
 Once we understand that files are filesystem objects, another question appears:
 
-**Who is allowed to access them?**
+> **Who is allowed to access them?**
 
 Linux associates ownership and permission information with filesystem objects.
 
@@ -340,13 +329,9 @@ Ownership + permissions
 Access decision
 ```
 
-Permissions are therefore not an independent feature floating above the filesystem.
+Permissions are therefore not an independent feature floating above the filesystem. They are part of the metadata associated with filesystem objects.
 
-They are part of the metadata associated with filesystem objects.
-
----
-
-## Why Directories Have Different Permission Semantics
+> **Why Directories Have Different Permission Semantics?**
 
 A common source of confusion is treating directory permissions exactly like file permissions.
 
@@ -382,9 +367,7 @@ requires traversing the directory hierarchy before the file itself can be access
 
 ## Processes Bring the System to Life
 
-Filesystem objects and permissions describe resources.
-
-Processes are the entities that actually use those resources.
+Filesystem objects and permissions describe resources. Processes are the entities that actually use those resources.
 
 When you run:
 
@@ -414,13 +397,9 @@ Filesystem
 Storage
 ```
 
-The process does not normally access the disk directly.
+The process does not normally access the disk directly. The kernel mediates the operation.
 
-The kernel mediates the operation.
-
----
-
-## File Descriptors Connect Processes to Resources
+> **File Descriptors Connect Processes to Resources**
 
 Processes interact with files and other I/O resources through **file descriptors**.
 
@@ -460,11 +439,9 @@ This is another example of how Linux combines simple primitives to create powerf
 
 ---
 
-## `/proc`: Where the Kernel Exposes Runtime Information
+## Where the Kernel Exposes Runtime Information `/proc`
 
-The filesystem itself is not the only information exposed through filesystem-like interfaces.
-
-Linux provides virtual filesystems such as:
+The filesystem itself is not the only information exposed through filesystem-like interfaces. Linux provides virtual filesystems such as:
 
 ```text
 /proc
@@ -512,9 +489,7 @@ Kernel-provided runtime information
 
 The same filesystem concept we use for persistent storage is also used as an interface to information maintained dynamically by the kernel.
 
----
-
-## Processes and System Resources
+### Processes and System Resources
 
 Processes consume system resources.
 
@@ -555,13 +530,10 @@ uptime
 
 provides system uptime and load information.
 
-These commands are not isolated utilities.
+These commands are not isolated utilities. They are different ways of observing the same running system.
 
-They are different ways of observing the same running system.
 
----
-
-## Services Connect Processes to System Configuration
+### Services Connect Processes to System Configuration
 
 A service is typically a long-running function provided by the system.
 
@@ -649,9 +621,7 @@ This is the kind of connection that turns individual Linux commands into a coher
 
 This mental model also changes how we troubleshoot.
 
-Suppose an application cannot read a file.
-
-Instead of immediately changing permissions, we can work through the layers:
+Suppose an application cannot read a file. Instead of immediately changing permissions, we can work through the layers:
 
 ```text
 Is the process running?
@@ -689,7 +659,7 @@ Is the network involved?
 What does the application log show?
 ```
 
-The commands come after the mental model.
+The commands come after choosing the appropriate path.
 
 ---
 
@@ -726,17 +696,13 @@ network interfaces
 storage
 ```
 
-Automation does not replace the underlying concepts.
-
-It operates on top of them.
+Automation does not replace the underlying concepts. It operates on top of them.
 
 ---
 
 ## Building a Linux Mental Model
 
-The most useful outcome of learning Linux fundamentals is not knowing hundreds of commands.
-
-It is being able to move between different levels of abstraction.
+The most useful outcome of learning Linux fundamentals is not knowing hundreds of commands. It is being able to move between different levels of abstraction.
 
 For example:
 
@@ -788,13 +754,11 @@ Permission check
 Filesystem object
 ```
 
-These are not separate Linux topics.
-
-They are connected views of the same system.
+These are not separate Linux topics. They are connected views of the same system.
 
 ---
 
-## The Bigger Picture
+## Summary
 
 The Linux learning path can now be viewed as a chain:
 
@@ -828,7 +792,7 @@ Permissions explain **who can access those objects**.
 
 The boot process explains **how the operating system comes to life**.
 
-`systemd` explains **how userspace services are started and managed**.
+The `systemd` explains **how userspace services are started and managed**.
 
 Processes explain **what is actually running**.
 
@@ -836,9 +800,8 @@ Monitoring explains **how we observe the system and identify problems**.
 
 Together, they form the foundation needed to work effectively with Linux infrastructure.
 
----
-
-## Key Takeaways
+>[!NOTES]
+> **Here are some Key Takeaways**:
 
 * Linux is best understood as a set of interconnected layers rather than a collection of commands.
 * The boot process eventually leads to a running userspace managed by PID 1.
@@ -847,15 +810,11 @@ Together, they form the foundation needed to work effectively with Linux infrast
 * Directory entries, filenames, and inodes represent different aspects of filesystem organisation.
 * Permissions and ownership determine how processes can access filesystem objects.
 * Processes interact with the kernel through system calls and consume system resources.
-* `/proc` provides a filesystem-like interface to runtime kernel information.
-* `systemd` connects system configuration and services with running processes.
+* The `/proc` provides a filesystem-like interface to runtime kernel information.
+* The `systemd` connects system configuration and services with running processes.
 * Monitoring tools provide different views of the same underlying system.
 * Understanding the relationships between these concepts is more valuable than memorising individual commands.
 * These foundations provide the basis for understanding containers, orchestration, automation, and broader DevOps technologies.
-
----
-
-## What's Next?
 
 With these Linux foundations in place, the next stage of the journey can move from understanding **how Linux works** toward understanding **how to operate and automate systems effectively**.
 
